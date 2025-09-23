@@ -44,7 +44,7 @@ source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Copy `.env.example` to `.env` and edit values:
+Create `.env` and paste the following:
 ```ini
 DATABASE_URL=mysql+asyncmy://chatuser:chatpass@localhost:3306/groupchat
 JWT_SECRET=<replace_with_long_random_string>
