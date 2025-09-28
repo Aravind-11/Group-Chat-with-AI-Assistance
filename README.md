@@ -116,5 +116,3 @@ README.md
 
 ---
 
-## About
-This project was developed as part of the **Mistral AI Internship Application**, demonstrating skills in **backend development, database design, real-time systems, and reinforcement learning with user feedback**.  
