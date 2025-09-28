@@ -7,6 +7,7 @@ Any message ending with a `?` automatically triggers a response from an AI assis
 Each AI response can be **liked or disliked** by users, and the collected feedback is used in a **preference fine-tuning loop** with **GRPO** to continuously improve model behavior.  
 
 ---
+![Group Chat Interface](backend/chat.png)
 
 ## Features
 - 🔐 User authentication (JWT-based)  
