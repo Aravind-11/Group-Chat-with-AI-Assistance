@@ -4,6 +4,7 @@
 This project is a **real-time group chat application** powered by **Mistral AI**.  
 Multiple users can join the same chatroom, send messages, and see each other’s responses in real time.  
 Any message ending with a `?` automatically triggers a response from an AI assistant using Mistral’s models.  
+Each AI response can be **liked or disliked** by users, and the collected feedback is used in a **preference fine-tuning loop** with **GRPO** to continuously improve model behavior.  
 
 ---
 
@@ -12,6 +13,8 @@ Any message ending with a `?` automatically triggers a response from an AI assis
 - 👥 **Shared group chatroom** — all users see each other’s messages  
 - 💬 Real-time chat via WebSocket  
 - 🤖 AI bot replies (triggered by `?`) powered by **Mistral**  
+- 👍👎 **Feedback system** — like/dislike buttons on each AI response  
+- 🔄 **Feedback-to-fine-tuning loop** using **GRPO** for preference adaptation  
 - 📦 Clear, modular structure with `.env` configuration  
 - 🛠 Easy to set up and test locally or in deployment  
 
@@ -66,9 +69,10 @@ Access the app at: [http://localhost:8000](http://localhost:8000)
 ---
 
 ### 3. Frontend
-The frontend is plain **HTML/CSS/JS** served directly by FastAPI:
+The frontend is **HTML/CSS/JS** served by FastAPI:
 - **REST API** → login, signup, and posting messages  
 - **WebSocket** → broadcasting chat messages in real time  
+- **Feedback UI** → like/dislike buttons on AI messages  
 
 ---
 
@@ -81,6 +85,8 @@ The frontend is plain **HTML/CSS/JS** served directly by FastAPI:
 5. All logged-in users connect to the **same group chatroom**.  
 6. Messages are broadcast in real time to all participants.  
 7. Any message ending with `?` will trigger an AI response from **Mistral**.  
+8. Users can **like or dislike** AI responses.  
+9. Feedback is stored in the DB and used in a **GRPO fine-tuning pipeline** to improve model responses over time.  
 
 ---
 
@@ -104,9 +110,11 @@ README.md
 - ✅ **Environment variable configuration** (`.env`)  
 - ✅ **JWT authentication** for secure sessions  
 - ✅ **WebSocket broadcasting** for group messaging  
+- ✅ **Feedback loop** with like/dislike system  
+- ✅ **GRPO fine-tuning integration** for preference adaptation  
 - ✅ **Clear modular structure** for easy testing  
 
 ---
 
 ## About
-This project was developed as part of the **Mistral AI Internship Application**.  
+This project was developed as part of the **Mistral AI Internship Application**, demonstrating skills in **backend development, database design, real-time systems, and reinforcement learning with user feedback**.  
