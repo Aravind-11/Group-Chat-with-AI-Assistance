@@ -1,7 +1,8 @@
 # AI-Enhanced Group Chat (Web App)
 
 ## Overview
-This project is a **real-time group chat application** powered by **Mistral AI**.  
+This project is a **real-time group chat application** with AI Assistance.
+
 Multiple users can join the same chatroom, send messages, and see each other’s responses in real time.  
 Any message ending with a `?` automatically triggers a response from an AI assistant using Mistral’s models.  
 Each AI response can be **liked or disliked** by users, and the collected feedback is used in a **preference fine-tuning loop** with **GRPO** to continuously improve model behavior.  
