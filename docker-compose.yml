@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: groupchat-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: groupchat
+      MYSQL_USER: chatuser
+      MYSQL_PASSWORD: chatpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  app:
+    build: .
+    container_name: groupchat-app
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: mysql+asyncmy://chatuser:chatpass@db:3306/groupchat
+      JWT_SECRET: mysecretkey
+      JWT_EXPIRE_MINUTES: 43200
+      LLM_API_BASE: https://api.mistral.ai/v1
+      LLM_MODEL: mistral-medium
+      LLM_API_KEY: your_api_key_here
+      APP_HOST: 0.0.0.0
+      APP_PORT: 8000
+    volumes:
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+    command: uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  db_data:
+
