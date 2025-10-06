@@ -80,7 +80,7 @@ From the project root:
 
 ```bash
 docker compose up --build
-
+```
 ---
 
 ### 3. Frontend
