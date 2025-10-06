@@ -29,7 +29,7 @@ Each AI response can be **liked or disliked** by users, and the collected feedba
 
 ---
 
-## Setup Instructions
+## Setup Instructions (To run locally)
 
 ### 1. Database Setup (MySQL)
 ```sql
@@ -67,6 +67,19 @@ uvicorn app:app --host 0.0.0.0 --port 8000
 ```
 
 Access the app at: [http://localhost:8000](http://localhost:8000)  
+
+## 🚀 Run with Docker (Recommended)
+
+This setup lets you run the **FastAPI + MySQL + Frontend** stack using Docker Compose — no manual environment setup required.
+
+---
+
+### 1️⃣ Build and Run Containers
+
+From the project root:
+
+```bash
+docker compose up --build
 
 ---
 
