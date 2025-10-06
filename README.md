@@ -81,6 +81,20 @@ From the project root:
 ```bash
 docker compose up --build
 ```
+
+This command will:
+
+- Build the FastAPI app image from your Dockerfile
+
+- Launch MySQL 8.0 and the FastAPI backend
+
+- Automatically initialize the database from sql/schema.sql
+
+Once complete, you’ll see:
+```
+Uvicorn running on http://0.0.0.0:8000
+```
+
 ---
 
 ### 3. Frontend
